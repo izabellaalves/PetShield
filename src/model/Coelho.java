@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Coelho extends Animal{
@@ -7,15 +8,18 @@ public class Coelho extends Animal{
 	private boolean vacinaMixomatose;
 	private boolean vacinaHemorragica;
 	
-	public Coelho(String raca, boolean vacinaM, boolean vacinaH, String nome, String data, String sexo) {
+	public Coelho(String nome, String data, String sexo, String raca) {
 		this.raca = raca;
-		vacinaMixomatose = vacinaM;
-		vacinaHemorragica = vacinaH;
+		vacinaMixomatose = false;
+		vacinaHemorragica = false;
 		this.nome = nome;
 		dataDeNascimento = data;
 		this.sexo = sexo;
 		especie = "Coelho";
+		this.vacinas = new ArrayList<>();
 	}
+	
+	//gets e sets
 
 	public String getRaca() {
 		return raca;
@@ -39,37 +43,5 @@ public class Coelho extends Animal{
 	public void setVacinaHemorragica(boolean vacinaHemorragica) {
 		this.vacinaHemorragica = vacinaHemorragica;
 	}
-	
-	// gets e sets Animal 
-	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getDataDeNascimento() {
-		return dataDeNascimento;
-	}
-	public void setDataDeNascimento(String dataDeNascimento) {
-		this.dataDeNascimento = dataDeNascimento;
-	}
-	public String getEspecie() {
-		return especie;
-	}
-	public void setEspecie(String especie) {
-		this.especie = especie;
-	}
-	public String getSexo() {
-		return sexo;
-	}
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
-	public Vacina[] getVacinas() {
-		return vacinas;
-	}
-	public void setVacinas(Vacina[] vacinas) {
-		this.vacinas = vacinas;
-	}
+
 }

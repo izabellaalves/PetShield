@@ -1,20 +1,25 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Responsavel {
 	
 	private String nomeResponsavel;
 	private String emailResponsavel;
 	private String endereco;
 	private double telefone;
-	private Animal[] animais;
+	private ArrayList<Animal> animais;
 	
 	public Responsavel(String nome, String email, String endereco, double tele) {
 		nomeResponsavel = nome;
 		emailResponsavel = email;
 		this.endereco = endereco;
 		telefone = tele;
+		this.animais = new ArrayList<>();
 	
 	}
+	
+	//gets e sets
 
 	public String getNomeResponsavel() {
 		return nomeResponsavel;
@@ -48,15 +53,17 @@ public class Responsavel {
 		this.telefone = telefone;
 	}
 
-	public Animal[] getAnimais() {
+	public ArrayList<Animal> getAnimais() {
 		return animais;
 	}
 
-	public void setAnimais(Animal[] animais) {
+	public void setAnimais(ArrayList<Animal> animais) {
 		this.animais = animais;
 	}
 	
-	
-	
-	
+	//outros metodos
+
+	public void cadastrarAnimal(Animal animal) {
+		animais.add(animal);
+	}
 }

@@ -1,14 +1,16 @@
 package model;
 
-import java.util.Date;
+import java.util.ArrayList;
 
 public abstract class Animal {
 	protected String nome;
 	protected String dataDeNascimento;
 	protected String especie;
 	protected String sexo;
-	protected Vacina[] vacinas;
+	protected ArrayList<Vacina> vacinas;
 	protected String raca;
+	
+	// gets e sets
 	
 	public String getNome() {
 		return nome;
@@ -34,12 +36,14 @@ public abstract class Animal {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public Vacina[] getVacinas() {
+	public ArrayList<Vacina> getVacinas() {
 		return vacinas;
 	}
-	public void setVacinas(Vacina[] vacinas) {
+
+	public void setVacinas(ArrayList<Vacina> vacinas) {
 		this.vacinas = vacinas;
 	}
+
 	public String getRaca() {
 		return raca;
 	}
@@ -47,7 +51,15 @@ public abstract class Animal {
 		this.raca = raca;
 	}
 	
+	//outros metodos
 	
+	public String toString() {
+		return nome;
+	}
 	
+	public void cadastrarVacina(Vacina vacina) {
+		vacinas.add(vacina);
+	}
+
 	
 }

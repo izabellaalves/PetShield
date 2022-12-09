@@ -5,9 +5,11 @@ import java.util.Date;
 public class Vacina {
  
 	private String tipo;
-	private Date dataVacinacao;
+	private String dataVacinacao;
 	
-	public Vacina(String tipo, Date data) {
+	//gets e sets
+	
+	public Vacina(String tipo, String data) {
 		this.tipo = tipo;
 		dataVacinacao = data;
 	}
@@ -20,13 +22,21 @@ public class Vacina {
 		this.tipo = tipo;
 	}
 
-	public Date getDataVacinacao() {
+	
+	public String getDataVacinacao() {
 		return dataVacinacao;
 	}
 
-	public void setDataVacinacao(Date dataVacinacao) {
+	public void setDataVacinacao(String dataVacinacao) {
 		this.dataVacinacao = dataVacinacao;
 	}
+
 	
+	// outros metodos
+	
+	
+	public String toString() {
+		return tipo + " - " + dataVacinacao;
+	}
 	
 }
