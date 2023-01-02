@@ -27,6 +27,19 @@ public class Main {
 		System.out.println("Vacinas de " + cachorro.getNome() + " = " + cachorro.getVacinas());
 		System.out.println("Vacinas de " + gato.getNome() + " = " + gato.getVacinas());
 		System.out.println("Vacinas de " + coelho.getNome() + " = " + coelho.getVacinas());
+		responsavel1.buscarAnimal("Totó");
+		cachorro.buscarVacina("Gripe canina");
+		
+		responsavel1.excluirAnimal(cachorro);
+		System.out.println("Animais de " + responsavel1.getNomeResponsavel() + " = " + responsavel1.getAnimais());
+		
+		cachorro.excluirVacina(vacinaCachorro);
+		System.out.println("Vacinas de " + cachorro.getNome() + " = " + cachorro.getVacinas());
+		
+		coelho.registrarMixomatose("21/12/2022");
+		coelho.registrarHemorragica("20/12/2022");
+		System.out.println("Vacinas de " + coelho.getNome() + " = " + coelho.getVacinas());
+		
 		
 	}
 

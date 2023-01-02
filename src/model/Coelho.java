@@ -44,4 +44,17 @@ public class Coelho extends Animal{
 		this.vacinaHemorragica = vacinaHemorragica;
 	}
 
+	//outros metodos
+	
+	public void registrarMixomatose(String data) {
+		vacinaMixomatose = true;
+		Vacina vacina = new Vacina("Mixomatose", data);
+		vacinas.add(vacina);
+	}
+	
+	public void registrarHemorragica(String data) {
+		vacinaHemorragica = true;
+		Vacina vacina = new Vacina("Febre hemorragica", data);
+		vacinas.add(vacina);
+	}
 }

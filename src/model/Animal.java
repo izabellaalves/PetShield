@@ -60,6 +60,23 @@ public abstract class Animal {
 	public void cadastrarVacina(Vacina vacina) {
 		vacinas.add(vacina);
 	}
+	
+	public void buscarVacina(String tipo) {
+		for (int i = 0; i < vacinas.size(); i++) {
+			if(vacinas.get(i).getTipo().equals(tipo)) {
+				System.out.println(vacinas.get(i).getTipo() + " | " + vacinas.get(i).getDataVacinacao());
+			}
+		
+		}
+	}
+	
+	public void excluirVacina(Vacina vacina) {
+		for (int i = 0; i < vacinas.size(); i++) {
+			if(vacinas.get(i).equals(vacina)) {
+					vacinas.remove(vacinas.get(i));
+			}
+		}
+	}
 
 	
 }

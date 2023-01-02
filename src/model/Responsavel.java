@@ -66,4 +66,26 @@ public class Responsavel {
 	public void cadastrarAnimal(Animal animal) {
 		animais.add(animal);
 	}
+	
+	public void buscarAnimal(String nome) {
+		
+		for (int i = 0; i < animais.size(); i++) {
+			if(animais.get(i).getNome().equals(nome)) {
+					System.out.println(animais.get(i).getNome() + " | " + animais.get(i).getEspecie() + " | " 
+					+ animais.get(i).getDataDeNascimento() + " | " + animais.get(i).getSexo() + " | " + animais.get(i).getVacinas());
+			}
+		
+		}
+	}
+	
+	public void excluirAnimal(Animal animal) {
+		for (int i = 0; i < animais.size(); i++) {
+			if(animais.get(i).equals(animal)) {
+					animais.remove(animais.get(i));
+			}
+		}
+	}
+
+	
 }
+	
