@@ -1,4 +1,5 @@
 package view;
+import controllers.CadastroResponsavelController;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -16,14 +17,17 @@ import javax.swing.border.BevelBorder;
 
 import model.Responsavel;
 
-public class CadastroResponsavelTela extends JFrame {
+public class CadastroResponsavelTela extends JFrame implements ActionListener{
+	
+	
 	
 	private static final long serialVersionUID = 1L;
 	
-	JTextField inputEmail = new JTextField();
-	JTextArea inputEndereco = new JTextArea();
-	JTextField inputTel = new JTextField();
-	JTextField inputNome = new JTextField();
+	private JTextField inputEmail = new JTextField();
+	private JTextArea inputEndereco = new JTextArea();
+	private JTextField inputTel = new JTextField();
+	private JTextField inputNome = new JTextField();
+	JButton btnCadastrar = new JButton("Cadastrar");
 	JTextField telefonet = new JTextField();
 	
 	public CadastroResponsavelTela() {
@@ -70,54 +74,84 @@ public class CadastroResponsavelTela extends JFrame {
 		panel_1.add(lblTel);
 		
 		
-		inputEmail.setBounds(127, 99, 187, 20);
-		panel_1.add(inputEmail);
-		inputEmail.setColumns(10);
+		getInputEmail().setBounds(127, 99, 187, 20);
+		panel_1.add(getInputEmail());
+		getInputEmail().setColumns(10);
 		
 		
-		inputEndereco.setBounds(127, 133, 187, 36);
-		panel_1.add(inputEndereco);
+		getInputEndereco().setBounds(127, 133, 187, 36);
+		panel_1.add(getInputEndereco());
 		
 		
-		inputTel.setBounds(127, 183, 187, 20);
-		panel_1.add(inputTel);
-		inputTel.setColumns(10);
+		getInputTel().setBounds(127, 183, 187, 20);
+		panel_1.add(getInputTel());
+		getInputTel().setColumns(10);
 		
-		JButton btnCadastrar = new JButton("Cadastrar");
+		
 		btnCadastrar.setFont(new Font("Monospaced", Font.ITALIC, 13));
 		btnCadastrar.setForeground(new Color(0, 0, 0));
 		btnCadastrar.setBackground(new Color(39, 222, 145));
 		btnCadastrar.setBounds(124, 246, 115, 23);
 		panel_1.add(btnCadastrar);
 		
-		inputNome.setBounds(127, 65, 187, 20);
-		panel_1.add(inputNome);
-		inputNome.setColumns(10);
+		getInputNome().setBounds(127, 65, 187, 20);
+		panel_1.add(getInputNome());
+		getInputNome().setColumns(10);
 		
-		btnCadastrar.addActionListener(
-				new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						String c = inputNome.getText();
-						String em = inputEmail.getText();
-						String end = inputEndereco.getText();
-						String tel = inputTel.getText();
-						Double tele = Double.valueOf(tel);
-						
-						Responsavel responsavel2 = new Responsavel(c, em, end, tele);
-						System.out.println(responsavel2.getNomeResponsavel() + " - " +  responsavel2.getEmailResponsavel());
-						
-						new MenuTela();
-					}
-					
-					
-				}
-		);
+		btnCadastrar.addActionListener(this);
 	}
 
 	public static void main(String[] args) {
 		new CadastroResponsavelTela();
+	}
+
+	public JTextField getInputNome() {
+		return inputNome;
+	}
+
+	public void setInputNome(JTextField inputNome) {
+		this.inputNome = inputNome;
+	}
+
+	public JTextField getInputEmail() {
+		return inputEmail;
+	}
+
+	public void setInputEmail(JTextField inputEmail) {
+		this.inputEmail = inputEmail;
+	}
+
+	public JTextArea getInputEndereco() {
+		return inputEndereco;
+	}
+
+	public void setInputEndereco(JTextArea inputEndereco) {
+		this.inputEndereco = inputEndereco;
+	}
+
+	public JTextField getInputTel() {
+		return inputTel;
+	}
+
+	public void setInputTel(JTextField inputTel) {
+		this.inputTel = inputTel;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Object src = e.getSource();
+		
+		String c = getInputNome().getText();
+		String em = getInputEmail().getText();
+		String end = getInputEndereco().getText();
+		String tel = getInputTel().getText();
+		Double tele = Double.valueOf(tel);
+		
+		if (src == btnCadastrar) {
+			CadastroResponsavelController cadastroResponsavelController = new CadastroResponsavelController();
+			cadastroResponsavelController.cadastrarResponsavel(c, em, end, tele);
+		}
+		
 	}
 
 }

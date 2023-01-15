@@ -2,6 +2,9 @@ package view;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.EventListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,9 +14,17 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 
+import controllers.CadastroCachorroController;
+import controllers.CadastroResponsavelController;
+import model.Cachorro;
 import model.Responsavel;
 
-public class CadastroCachorroTela extends JFrame{
+public class CadastroCachorroTela extends JFrame implements ActionListener{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private JTextField inputNomeCachorro;
 	private JTextField inputDataDeNascimento;
@@ -24,8 +35,6 @@ public class CadastroCachorroTela extends JFrame{
 	
 	public CadastroCachorroTela() {
 		super("Controle de vacinas");
-		
-		
 		
 		JPanel panel = new JPanel();
 		getContentPane().add(panel);
@@ -104,6 +113,7 @@ public class CadastroCachorroTela extends JFrame{
 		btnCadastrar.setBackground(new Color(39, 222, 145));
 		btnCadastrar.setBounds(124, 246, 115, 23);
 		panelMenor.add(btnCadastrar);
+		btnCadastrar.addActionListener(this);
 		
 		getContentPane().setBackground(new Color(244, 227, 157));
 		setBounds(100, 100, 500, 400);
@@ -114,6 +124,20 @@ public class CadastroCachorroTela extends JFrame{
 	public static void main(String[] args) {
 		new CadastroCachorroTela();
 
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		String nC = inputNomeCachorro.getText();
+		String dN = inputDataDeNascimento.getText();
+		String sexo = inputSexo.getText();
+		String raca = inputRaca.getText();
+		String porte = inputPorte.getText();
+		
+		CadastroResponsavelController cadastroResponsavelController = new CadastroResponsavelController();
+		cadastroResponsavelController.cadastrarCachorro(nC, dN, sexo, raca, porte);
+			
 	}
 
 }

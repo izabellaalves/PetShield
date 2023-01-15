@@ -2,6 +2,8 @@ package view;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,7 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 
-public class CadastroCoelhoTela extends JFrame{
+public class CadastroCoelhoTela extends JFrame implements ActionListener{
 	
 	private JTextField inputNomeCoelho;
 	private JTextField inputDataDeNascimento;
@@ -94,6 +96,7 @@ public class CadastroCoelhoTela extends JFrame{
 		btnCadastrar.setBackground(new Color(39, 222, 145));
 		btnCadastrar.setBounds(124, 267, 115, 23);
 		panelMenor.add(btnCadastrar);
+		btnCadastrar.addActionListener(this);
 		
 		JRadioButton rdbtnMixomatose = new JRadioButton("Não possui");
 		rdbtnMixomatose.setFont(new Font("Monospaced", Font.PLAIN, 11));
@@ -131,6 +134,12 @@ public class CadastroCoelhoTela extends JFrame{
 	public static void main(String[] args) {
 		new CadastroCoelhoTela();
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

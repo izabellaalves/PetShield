@@ -1,7 +1,9 @@
 package view;
-
+import controllers.*;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,7 +13,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 
-public class CadastroGatoTela extends JFrame{
+import controllers.CadastroResponsavelController;
+
+public class CadastroGatoTela extends JFrame implements ActionListener{
 	
 	private JTextField inputNomeGato;
 	private JTextField inputDataDeNascimento;
@@ -99,6 +103,8 @@ public class CadastroGatoTela extends JFrame{
 		btnCadastrar.setBackground(new Color(39, 222, 145));
 		btnCadastrar.setBounds(124, 246, 115, 23);
 		panelMenor.add(btnCadastrar);
+		btnCadastrar.addActionListener(this);
+
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setBackground(new Color(244, 227, 157));
@@ -110,5 +116,20 @@ public class CadastroGatoTela extends JFrame{
 	public static void main(String[] args) {
 		new CadastroGatoTela();
 	}
-
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		String nC = inputNomeGato.getText();
+		String dN = inputDataDeNascimento.getText();
+		String sexo = inputSexo.getText();
+		String raca = inputRaca.getText();
+		String porte = inputPelagem.getText();
+		
+		CadastroResponsavelController cadastroResponsavelController = new CadastroResponsavelController();
+		cadastroResponsavelController.cadastrarGato(nC, dN, sexo, raca, porte);
+			
+	}
+	
+	
 }
