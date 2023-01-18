@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -105,6 +106,19 @@ public class CadastroGatoTela extends JFrame implements ActionListener{
 		panelMenor.add(btnCadastrar);
 		btnCadastrar.addActionListener(this);
 
+		JButton btnBack = new JButton("<");
+		btnBack.setFont(new Font("Monospaced", Font.BOLD, 15));
+		btnBack.setBounds(10, 11, 46, 29);
+		getContentPane().add(btnBack);
+		btnBack.setBackground(new Color(39, 222, 145));
+		btnBack.addActionListener(
+				new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						new MenuTela();
+						dispose();
+					}
+				}
+			);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setBackground(new Color(244, 227, 157));
@@ -128,6 +142,9 @@ public class CadastroGatoTela extends JFrame implements ActionListener{
 		
 		CadastroResponsavelController cadastroResponsavelController = new CadastroResponsavelController();
 		cadastroResponsavelController.cadastrarGato(nC, dN, sexo, raca, porte);
+		
+		this.setVisible(false);
+		JOptionPane.showMessageDialog(null, "Animal cadastrado com sucesso!");
 			
 	}
 	

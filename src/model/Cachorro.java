@@ -34,5 +34,17 @@ public class Cachorro extends Animal {
 		this.porte = porte;
 	}
 	
+	//outros metodos
+	
+	public String atualizaDado(String s) {
+		setPorte(s);
+		return getPorte();
+	}
+	
+	
+	public String toString() {
+		return getPorte();
+	}
+	
 	
 }

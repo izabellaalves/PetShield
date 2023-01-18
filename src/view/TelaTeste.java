@@ -27,18 +27,22 @@ public class TelaTeste extends JFrame{
 		getContentPane().setLayout(null);
 		
 		JPanel panelMenor = new JPanel();
-		panelMenor.setBounds(66, 27, 300, 250);
+		panelMenor.setBounds(86, 106, 314, 180);
 		panelMenor.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		getContentPane().add(panelMenor);
 		panelMenor.setLayout(new BorderLayout());
-	     
+		
+		JButton btnCadastrarVacina = new JButton("Cadastrar vacina");
+		btnCadastrarVacina.setBounds(171, 315, 141, 23);
+		getContentPane().add(btnCadastrarVacina);
+		
 	    JList list = new JList();
-		list.setModel(controller.listarAnimais());
+		//list.setModel(controller.listarAnimais());
 		JScrollPane scrollPane1 = new JScrollPane(list);
 		panelMenor.add(scrollPane1, BorderLayout.CENTER);
 	 
-	    //etSize(350, 250);
-	    //setVisible(true);
+		JButton btnSalvar = new JButton("Salvar");
+		
 	  }
 	   
 	  public static void main(String args[]){

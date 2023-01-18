@@ -8,7 +8,7 @@ public class Main {
 		
 		Cachorro cachorro = new Cachorro("Totó", "20/03/2022", "macho", "pinscher", "pequeno");
 		Gato gato = new Gato("Fenix", "01/02/2021", "macho", "siamês", "sólida");
-		Coelho coelho = new Coelho("Flora", "12/01/2022", "fêmea", "angorá");
+		Coelho coelho = new Coelho("Flora", "12/01/2022", "fêmea", "angorá", true);
 		
 		responsavel1.cadastrarAnimal(cachorro);
 		responsavel1.cadastrarAnimal(gato);

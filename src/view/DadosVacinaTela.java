@@ -2,23 +2,27 @@ package view;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.BevelBorder;
 
+import controllers.CadastroResponsavelController;
+
 public class DadosVacinaTela extends JFrame{
-	
-	//N APARECE JLABEL DA DATAAAAAAAAAAAAAAAAAAAAAAAAAA
 	
 	private JTextField inputBuscarAnimal;
 	private JTextField textField;
+	CadastroResponsavelController controller = new CadastroResponsavelController();
 	
 	
-	public DadosVacinaTela() {
+	public DadosVacinaTela(int i, int k) {
 		super("Controle de vacinas");
 		
 		setBounds(100, 100, 500, 400);
@@ -36,9 +40,9 @@ public class DadosVacinaTela extends JFrame{
 		getContentPane().add(panelMenor);
 		panelMenor.setLayout(null);
 		
-		JLabel titulo = new JLabel("Dados");
+		JLabel titulo = new JLabel("Dados da vacina");
 		titulo.setFont(new Font("Monospaced", Font.BOLD, 18));
-		titulo.setBounds(144, 24, 63, 14);
+		titulo.setBounds(96, 21, 245, 14);
 		panelMenor.add(titulo);
 		
 		JLabel lblTipoVacina = new JLabel("Tipo");
@@ -46,7 +50,7 @@ public class DadosVacinaTela extends JFrame{
 		lblTipoVacina.setBounds(38, 62, 63, 19);
 		panelMenor.add(lblTipoVacina);
 		
-		inputBuscarAnimal = new JTextField();
+		inputBuscarAnimal = new JTextField(controller.responsavel21.getAnimais().get(i).getVacinas().get(k).getTipo());
 		inputBuscarAnimal.setBounds(108, 61, 203, 20);
 		panelMenor.add(inputBuscarAnimal);
 		inputBuscarAnimal.setColumns(10);
@@ -57,6 +61,15 @@ public class DadosVacinaTela extends JFrame{
 		btnExcluir.setBackground(new Color(39, 222, 145));
 		btnExcluir.setBounds(175, 249, 136, 23);
 		panelMenor.add(btnExcluir);
+		btnExcluir.addActionListener(new ActionListener () {
+			public void actionPerformed(ActionEvent e) {
+				controller.excluirVacina(controller.responsavel21.getAnimais().get(i).getVacinas().get(k), i);
+				JOptionPane.showMessageDialog(null, "Vacina excluída com sucesso!");
+				new ListaDeVacinasTela(i);
+				dispose();
+			}
+		}
+		);
 		
 		JLabel lblDataVacina = new JLabel("Data");
 		lblDataVacina.setForeground(new Color(0, 0, 0));
@@ -64,7 +77,7 @@ public class DadosVacinaTela extends JFrame{
 		lblDataVacina.setBounds(38, 103, 63, 19);
 		panelMenor.add(lblDataVacina);
 		
-		textField = new JTextField();
+		textField = new JTextField(controller.responsavel21.getAnimais().get(i).getVacinas().get(k).getDataVacinacao());
 		textField.setColumns(10);
 		textField.setBounds(108, 104, 203, 20);
 		panelMenor.add(textField);
@@ -75,12 +88,14 @@ public class DadosVacinaTela extends JFrame{
 		btnSalvar.setBackground(new Color(39, 222, 145));
 		btnSalvar.setBounds(29, 249, 136, 23);
 		panelMenor.add(btnSalvar);
-		
-	}
-
-	public static void main(String[] args) {
-		new DadosVacinaTela();
-
+		btnSalvar.addActionListener(new ActionListener () {
+			public void actionPerformed(ActionEvent e) {
+				controller.editarVacina(i, k, inputBuscarAnimal.getText().toString(), textField.getText().toString());
+				JOptionPane.showMessageDialog(null, "Dados alterados com sucesso!");
+				new ListaDeVacinasTela(i);
+			}
+		}
+		);
 	}
 
 }

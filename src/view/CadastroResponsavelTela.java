@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -49,7 +50,7 @@ public class CadastroResponsavelTela extends JFrame implements ActionListener{
 		panel_1.setLayout(null);
 		
 		JLabel titulo = new JLabel("Informe seus dados");
-		titulo.setBounds(80, 11, 198, 25);
+		titulo.setBounds(80, 11, 200, 25);
 		titulo.setFont(new Font("Monospaced", Font.BOLD, 18));
 		panel_1.add(titulo);
 		
@@ -139,6 +140,8 @@ public class CadastroResponsavelTela extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		
 		Object src = e.getSource();
 		
 		String c = getInputNome().getText();
@@ -151,6 +154,9 @@ public class CadastroResponsavelTela extends JFrame implements ActionListener{
 			CadastroResponsavelController cadastroResponsavelController = new CadastroResponsavelController();
 			cadastroResponsavelController.cadastrarResponsavel(c, em, end, tele);
 		}
+		
+		this.setVisible(false);
+		JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
 		
 	}
 

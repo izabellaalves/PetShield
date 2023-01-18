@@ -53,10 +53,6 @@ public abstract class Animal {
 	
 	//outros metodos
 	
-	public String toString() {
-		return nome;
-	}
-	
 	public void cadastrarVacina(Vacina vacina) {
 		vacinas.add(vacina);
 	}
@@ -77,6 +73,9 @@ public abstract class Animal {
 			}
 		}
 	}
+	
+	public abstract String toString();
+	public abstract String atualizaDado(String string);
 
 	
 }

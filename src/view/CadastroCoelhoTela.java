@@ -1,26 +1,34 @@
 package view;
 
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 
+import controllers.CadastroResponsavelController;
+
 public class CadastroCoelhoTela extends JFrame implements ActionListener{
+
 	
 	private JTextField inputNomeCoelho;
 	private JTextField inputDataDeNascimento;
 	private JTextField inputSexo;
 	private JTextField inputRaca;
 	private JLabel lblNomeCoelho;
+	JComboBox<String> comboBoxMixomatose = new JComboBox<>();
+	
 	
 	public CadastroCoelhoTela() {
 		super ("Cadastro de vacinas");
@@ -98,31 +106,25 @@ public class CadastroCoelhoTela extends JFrame implements ActionListener{
 		panelMenor.add(btnCadastrar);
 		btnCadastrar.addActionListener(this);
 		
-		JRadioButton rdbtnMixomatose = new JRadioButton("Não possui");
-		rdbtnMixomatose.setFont(new Font("Monospaced", Font.PLAIN, 11));
-		rdbtnMixomatose.setBounds(130, 191, 109, 23);
-		panelMenor.add(rdbtnMixomatose);
 		
-		JRadioButton rdbtnHemorragica = new JRadioButton("Possui");
-		rdbtnHemorragica.setFont(new Font("Monospaced", Font.PLAIN, 11));
-		rdbtnHemorragica.setBounds(236, 191, 109, 23);
-		panelMenor.add(rdbtnHemorragica);
+		JButton btnBack = new JButton("<");
+		btnBack.setFont(new Font("Monospaced", Font.BOLD, 15));
+		btnBack.setBounds(10, 11, 46, 29);
+		getContentPane().add(btnBack);
+		btnBack.setBackground(new Color(39, 222, 145));
+		btnBack.addActionListener(
+				new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						new MenuTela();
+						dispose();
+					}
+				}
+			);
 		
-		JLabel vacinaHemorragica = new JLabel("Hemorragica");
-		vacinaHemorragica.setHorizontalAlignment(SwingConstants.RIGHT);
-		vacinaHemorragica.setFont(new Font("Monospaced", Font.PLAIN, 14));
-		vacinaHemorragica.setBounds(23, 227, 88, 20);
-		panelMenor.add(vacinaHemorragica);
-		
-		JRadioButton rdbtnMixomatose_1 = new JRadioButton("Não possui");
-		rdbtnMixomatose_1.setFont(new Font("Monospaced", Font.PLAIN, 11));
-		rdbtnMixomatose_1.setBounds(130, 224, 109, 23);
-		panelMenor.add(rdbtnMixomatose_1);
-		
-		JRadioButton rdbtnHemorragica_1 = new JRadioButton("Possui");
-		rdbtnHemorragica_1.setFont(new Font("Monospaced", Font.PLAIN, 11));
-		rdbtnHemorragica_1.setBounds(236, 224, 109, 23);
-		panelMenor.add(rdbtnHemorragica_1);
+		comboBoxMixomatose.addItem("Possui");
+		comboBoxMixomatose.addItem("Não possui");
+		comboBoxMixomatose.setBounds(130, 191, 109, 23);
+		panelMenor.add(comboBoxMixomatose);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setBackground(new Color(244, 227, 157));
@@ -138,7 +140,27 @@ public class CadastroCoelhoTela extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		String nC = inputNomeCoelho.getText();
+		String dN = inputDataDeNascimento.getText();
+		String sexo = inputSexo.getText();
+		String raca = inputRaca.getText();
+		
+		String mixo = comboBoxMixomatose.getSelectedItem().toString(); 
+		
+		Boolean mixomatose;
+		
+		if (mixo == "Possui") {
+			mixomatose = true;
+		}else {
+			mixomatose = false;
+		}
+		
+		CadastroResponsavelController cadastroResponsavelController = new CadastroResponsavelController();
+		cadastroResponsavelController.cadastrarCoelho(nC, dN, sexo, raca, mixomatose);
+		
+		this.setVisible(false);
+		JOptionPane.showMessageDialog(null, "Animal cadastrado com sucesso!");
+			
 		
 	}
 

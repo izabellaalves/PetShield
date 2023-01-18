@@ -26,5 +26,17 @@ public class Gato extends Animal{
 		this.pelagem = pelagem;
 	}
 
+	//outros metodos
+	
+	public String atualizaDado(String s) {
+		setPelagem(s);
+		return getPelagem();
+	}
+	
+	@Override
+	public String toString() {
+		return getPelagem();
+	}
+
 	
 }

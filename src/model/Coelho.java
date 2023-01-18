@@ -6,12 +6,10 @@ import java.util.Date;
 public class Coelho extends Animal{
 
 	private boolean vacinaMixomatose;
-	private boolean vacinaHemorragica;
 	
-	public Coelho(String nome, String data, String sexo, String raca) {
+	public Coelho(String nome, String data, String sexo, String raca, boolean mixo) {
 		this.raca = raca;
-		vacinaMixomatose = false;
-		vacinaHemorragica = false;
+		vacinaMixomatose = mixo;
 		this.nome = nome;
 		dataDeNascimento = data;
 		this.sexo = sexo;
@@ -36,14 +34,6 @@ public class Coelho extends Animal{
 		this.vacinaMixomatose = vacinaMixomatose;
 	}
 
-	public boolean isVacinaHemorragica() {
-		return vacinaHemorragica;
-	}
-
-	public void setVacinaHemorragica(boolean vacinaHemorragica) {
-		this.vacinaHemorragica = vacinaHemorragica;
-	}
-
 	//outros metodos
 	
 	public void registrarMixomatose(String data) {
@@ -52,9 +42,24 @@ public class Coelho extends Animal{
 		vacinas.add(vacina);
 	}
 	
-	public void registrarHemorragica(String data) {
-		vacinaHemorragica = true;
-		Vacina vacina = new Vacina("Febre hemorragica", data);
-		vacinas.add(vacina);
+	@Override
+	public String toString() {
+		String mixo;
+		if (vacinaMixomatose == true) {
+			mixo = "Possui";
+		} else {
+			mixo = "Não possui";
+		}
+		return mixo;
+	}
+
+	@Override
+	public String atualizaDado(String string) {
+		if (string == "Possui") {
+			vacinaMixomatose = true;
+		} else {
+			vacinaMixomatose = false;
+		}
+		return string;
 	}
 }

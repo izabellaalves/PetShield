@@ -45,6 +45,7 @@ public class MenuTela extends JFrame{
 			new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					new CadastroCachorroTela();
+					setVisible(false);
 				}
 			}
 		);
@@ -58,6 +59,7 @@ public class MenuTela extends JFrame{
 				new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						new CadastroGatoTela();
+						setVisible(false);
 					}
 				}
 			);
@@ -71,6 +73,7 @@ public class MenuTela extends JFrame{
 				new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						new CadastroCoelhoTela();
+						setVisible(false);
 					}
 				}
 			);
@@ -84,6 +87,7 @@ public class MenuTela extends JFrame{
 				new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						new ListaAnimaisTela();
+						setVisible(false);
 					}
 				}
 			);
