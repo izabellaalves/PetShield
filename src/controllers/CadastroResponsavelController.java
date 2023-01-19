@@ -27,6 +27,7 @@ public class CadastroResponsavelController{
 	public static int i;
 	public Cachorro cachorro;
 	
+	// CADASTROS : RESPONSAVEL, CACHORRO, GATO, COELHO E VACINAS
 	
 	public void cadastrarResponsavel(String n, String em, String end, Double tel) {
 		
@@ -63,6 +64,8 @@ public class CadastroResponsavelController{
 			responsavel21.getAnimais().get(i).cadastrarVacina(vacina);
 		}
 		
+		// LISTAS: ANIMAIS E VACINAS
+		
 		public DefaultListModel<String> listarAnimais() {
 			DefaultListModel<String> names = new DefaultListModel<>();
 			int size = responsavel21.getAnimais().size();
@@ -83,6 +86,8 @@ public class CadastroResponsavelController{
 				}
 			return names;
 		}
+		
+		//MOSTRAR DADOS: TELA QUE DISPONIBILIZA EDITAR, EXCLUIR, ETC.
 		
 		public void mostrarDados(String nome) {
 			for (i = 0; i < responsavel21.getAnimais().size(); i++) {
@@ -109,6 +114,8 @@ public class CadastroResponsavelController{
 			}
 			
 		}
+		
+		//EDIÇÕES: ANIMAIS E VACINA
 		
 		public void editarDadosCachorro(int i, String nome, String data, String sexo, String raca, String porte) {
 			responsavel21.getAnimais().get(i).setNome(nome);
@@ -139,6 +146,8 @@ public class CadastroResponsavelController{
 				responsavel21.getAnimais().get(posAnimal).getVacinas().get(posVacina).setDataVacinacao(data);
 		}
 		
+		//EXCLUIR: ANIMAIS E VACINA
+		
 		public void excluirAnimal(Animal animal) {
 			responsavel21.excluirAnimal(animal);
 		}
@@ -147,7 +156,8 @@ public class CadastroResponsavelController{
 			responsavel21.getAnimais().get(i).excluirVacina(vacina);
 		}
 
-
+		//BUSCA DE ANIMAIS
+		
 		public void buscarAnimal(String string) {
 			for (i = 0; i < responsavel21.getAnimais().size(); i++) {
 				if(responsavel21.getAnimais().get(i).getNome().equals(string)) {

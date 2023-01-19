@@ -206,10 +206,4 @@ public class DadosCoelhoTela extends JFrame{
 	
 	}
 
-	public static void main(String[] args) {
-		int i = 0;
-		new DadosCoelhoTela(i);
-
-	}
-
 }

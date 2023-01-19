@@ -135,11 +135,6 @@ public class CadastroCachorroTela extends JFrame implements ActionListener{
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-
-	public static void main(String[] args) {
-		new CadastroCachorroTela();
-
-	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {

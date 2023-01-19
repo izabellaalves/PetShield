@@ -96,6 +96,20 @@ public class DadosVacinaTela extends JFrame{
 			}
 		}
 		);
+		
+		JButton btnBack = new JButton("<");
+		btnBack.setFont(new Font("Monospaced", Font.BOLD, 15));
+		btnBack.setBounds(10, 11, 46, 29);
+		getContentPane().add(btnBack);
+		btnBack.setBackground(new Color(39, 222, 145));
+		btnBack.addActionListener(
+				new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						new ListaDeVacinasTela(i);
+						dispose();
+					}
+				}
+			);
 	}
 
 }

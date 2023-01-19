@@ -133,10 +133,6 @@ public class CadastroCoelhoTela extends JFrame implements ActionListener{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	public static void main(String[] args) {
-		new CadastroCoelhoTela();
-
-	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

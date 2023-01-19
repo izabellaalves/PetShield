@@ -197,13 +197,6 @@ public class DadosCachorroTela extends JFrame implements ActionListener{
 					}
 				}
 			);
-	}
+		}
 	
-	
-
-	public static void main(String[] args) {
-		new DadosCachorroTela();
-
-	}
-
 }

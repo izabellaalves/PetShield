@@ -114,9 +114,5 @@ public class CadastroVacinaTela extends JFrame{
 			);
 	}
 
-	public static void main(String[] args) {
-		new CadastroVacinaTela();
-
-	}
 
 }

@@ -108,15 +108,6 @@ public class ListaAnimaisTela extends JFrame implements ListSelectionListener{
 		
 	}
 	
-	
-
-	public static void main(String[] args) {
-		new ListaAnimaisTela();
-
-	}
-
-
-
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();

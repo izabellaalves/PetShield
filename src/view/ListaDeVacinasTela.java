@@ -92,15 +92,17 @@ public class ListaDeVacinasTela extends JFrame{
 		btnBack.addActionListener(
 				new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						new MenuTela();
+						if (controller.responsavel21.getAnimais().get(i).getEspecie() == "Cachorro") {
+							new DadosCachorroTela(i);
+						} else if (controller.responsavel21.getAnimais().get(i).getEspecie() == "Gato") {
+							new DadosGatoTela(i);
+						} else if (controller.responsavel21.getAnimais().get(i).getEspecie() == "Coelho") {
+							new DadosCoelhoTela(i);
+						}
 						dispose();
 					}
 				}
 		);
 		
-	}
-
-	public static void main(String[] args) {
-		new ListaDeVacinasTela();
 	}
 }
