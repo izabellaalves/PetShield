@@ -15,12 +15,23 @@ import javax.swing.border.BevelBorder;
 
 import controllers.CadastroResponsavelController;
 
+/**
+ * Classe que define a tela em que sera possivel cadastrar uma vacina pra um determinado animal.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class CadastroVacinaTela extends JFrame{
 	
 	CadastroResponsavelController controller = new CadastroResponsavelController();
 	private JTextField inputTipo;
 	private JTextField inputData;
 	
+	/**
+	 * Metodo construtor que define espacos para a entrada de dados da vacina e um botao para envio do formulario.
+	 * @param i Index do animal no ArrayList de animais do responsavel.
+	 * 
+	 */
 	public CadastroVacinaTela(int i) {
 		super("Cadastro de vacinas");
 		

@@ -15,13 +15,24 @@ import javax.swing.border.BevelBorder;
 
 import controllers.CadastroResponsavelController;
 
+/**
+ * Classe que define a tela em que sera possivel ver os dados de determinada vacina, alem de editar e excluir esta vacina.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class DadosVacinaTela extends JFrame{
 	
 	private JTextField inputBuscarAnimal;
 	private JTextField textField;
 	CadastroResponsavelController controller = new CadastroResponsavelController();
 	
-	
+	/**
+	 * Metodo construtor que define espacos para edicao dos dados da vacina, alem de botoes para realizar a edicao e a exclusao da vacina.
+	 * 
+	 * @param i Index do animal no ArrayList de animais do responsavel.
+	 * @param k Index da vacina no ArrayList de vacinas do animal.
+	 */
 	public DadosVacinaTela(int i, int k) {
 		super("Controle de vacinas");
 		
@@ -93,6 +104,7 @@ public class DadosVacinaTela extends JFrame{
 				controller.editarVacina(i, k, inputBuscarAnimal.getText().toString(), textField.getText().toString());
 				JOptionPane.showMessageDialog(null, "Dados alterados com sucesso!");
 				new ListaDeVacinasTela(i);
+				dispose();
 			}
 		}
 		);

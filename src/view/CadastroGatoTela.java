@@ -16,6 +16,12 @@ import javax.swing.border.BevelBorder;
 
 import controllers.CadastroResponsavelController;
 
+/**
+ * Classe que define a tela em que e possivel cadastrar um objeto do tipo gato.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class CadastroGatoTela extends JFrame implements ActionListener{
 	
 	private JTextField inputNomeGato;
@@ -24,6 +30,10 @@ public class CadastroGatoTela extends JFrame implements ActionListener{
 	private JTextField inputRaca;
 	private JTextField inputPelagem;
 	
+	/**
+	 * Metodo construtor que define as entradas de dados necessarias para o cadastro e o botao para envio do formulario.
+	 * 
+	 */
 	public CadastroGatoTela() {
 		super("Cadastro de vacinas");
 		
@@ -128,6 +138,9 @@ public class CadastroGatoTela extends JFrame implements ActionListener{
 	}
 	
 	@Override
+	/**
+	 * Metodo herdado de ActionListner, o qual recebe os dados e gera um objeto do tipo coelho.
+	 */
 	public void actionPerformed(ActionEvent e) {
 		
 		String nC = inputNomeGato.getText();
@@ -140,6 +153,7 @@ public class CadastroGatoTela extends JFrame implements ActionListener{
 		cadastroResponsavelController.cadastrarGato(nC, dN, sexo, raca, porte);
 		
 		this.setVisible(false);
+		new MenuTela();
 		JOptionPane.showMessageDialog(null, "Animal cadastrado com sucesso!");
 			
 	}

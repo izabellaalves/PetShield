@@ -18,9 +18,13 @@ import javax.swing.border.BevelBorder;
 
 import model.Responsavel;
 
+/**
+ * Classe que define a tela inicial do projeto, a qual serve para cadastrar o responsavel que controlara o funcionamento da aplicaçao.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class CadastroResponsavelTela extends JFrame implements ActionListener{
-	
-	
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -31,6 +35,10 @@ public class CadastroResponsavelTela extends JFrame implements ActionListener{
 	JButton btnCadastrar = new JButton("Cadastrar");
 	JTextField telefonet = new JTextField();
 	
+	/**
+	 * Metodo construtor que define os espacos para a entrada de dados do responsavel e o botao para envio do formulario.
+	 * 
+	 */
 	public CadastroResponsavelTela() {
 		super("Controle de vacinas");
 		
@@ -138,6 +146,9 @@ public class CadastroResponsavelTela extends JFrame implements ActionListener{
 		this.inputTel = inputTel;
 	}
 
+	/**
+	 * Metodo herdado de ActionListner, o qual recebe os dados e cadastra um responsavel.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		

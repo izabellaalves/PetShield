@@ -25,12 +25,22 @@ import controllers.CadastroResponsavelController;
 import model.Animal;
 import model.Responsavel;
 
+/**
+ * Classe que define a tela em que sera possivel ver toda a lista de animais do responsavel.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class ListaAnimaisTela extends JFrame implements ListSelectionListener{
 	
 	private JTextField inputBuscarAnimal;
 	private CadastroResponsavelController controller = new CadastroResponsavelController() ;
 	JList list = new JList();
 	
+	/**
+	 * Metodo construtor que recebe a lista de animais do responsavel e exibe atraves da interface grafica.
+	 * 
+	 */
 	public ListaAnimaisTela() {
 		super("Controle de vacinas");
 		
@@ -98,7 +108,7 @@ public class ListaAnimaisTela extends JFrame implements ListSelectionListener{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						controller.buscarAnimal(inputBuscarAnimal.getText().toString());
+						controller.buscarAnimal(inputBuscarAnimal.getText());
 						dispose();
 						
 					}
@@ -108,6 +118,9 @@ public class ListaAnimaisTela extends JFrame implements ListSelectionListener{
 		
 	}
 	
+	/**
+	 * Metodo que pega o valor do objeto que esta em foco na lista e retorna pro metodo mostrarDados disponivel em {@link controllers.CadastroResponsavelController}.
+	 */
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();

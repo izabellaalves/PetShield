@@ -19,6 +19,12 @@ import javax.swing.border.BevelBorder;
 
 import controllers.CadastroResponsavelController;
 
+/**
+ * Classe que define a tela em que e possivel cadastrar um objeto do tipo coelho.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class CadastroCoelhoTela extends JFrame implements ActionListener{
 
 	
@@ -29,7 +35,10 @@ public class CadastroCoelhoTela extends JFrame implements ActionListener{
 	private JLabel lblNomeCoelho;
 	JComboBox<String> comboBoxMixomatose = new JComboBox<>();
 	
-	
+	/**
+	 * Metodo construtor que define as entradas de dados necessarias para o cadastro e o botao para envio do formulario.
+	 * 
+	 */
 	public CadastroCoelhoTela() {
 		super ("Cadastro de vacinas");
 		
@@ -133,7 +142,9 @@ public class CadastroCoelhoTela extends JFrame implements ActionListener{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-
+	/**
+	 * Metodo herdado de ActionListner, o qual recebe os dados e gera um objeto do tipo coelho.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String nC = inputNomeCoelho.getText();
@@ -155,6 +166,7 @@ public class CadastroCoelhoTela extends JFrame implements ActionListener{
 		cadastroResponsavelController.cadastrarCoelho(nC, dN, sexo, raca, mixomatose);
 		
 		this.setVisible(false);
+		new MenuTela();
 		JOptionPane.showMessageDialog(null, "Animal cadastrado com sucesso!");
 			
 		

@@ -11,6 +11,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
 
+/**
+ * Classe que define a tela em que tera o menu que levara o usuario para as demais funcionalidades.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class MenuTela extends JFrame{
 	
 	JButton btnCadastroCachorro = new JButton("Cadastrar cachorro");
@@ -18,6 +24,10 @@ public class MenuTela extends JFrame{
 	JButton btnCadastroCoelho = new JButton("Cadastrar coelho");
 	JButton btnListaAnimais = new JButton("Ver seus animais");
 	
+	/**
+	 * Metodo construtor que instancia botoes que levam o usuario para as demais telas.
+	 * 
+	 */
 	public MenuTela() {
 		super("Controle de vacinas");
 

@@ -19,12 +19,23 @@ import javax.swing.event.ListSelectionListener;
 
 import controllers.CadastroResponsavelController;
 
+/**
+ * Classe que define a tela em que sera possivel ver toda a lista de vacinas de determinado animal.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class ListaDeVacinasTela extends JFrame{
 	
 	private JTextField inputBuscarAnimal;
 	private CadastroResponsavelController controller = new CadastroResponsavelController() ;
 	JList list = new JList();
 	
+	/**
+	 * Metodo construtor que recebe a lista de vacinas do animal e exibe atraves da interface grafica.
+	 * @param i Index do animal no ArrayList de animais do responsavel.
+	 * 
+	 */
 	public ListaDeVacinasTela(int i) {
 		super("Controle de vacinas");
 		
@@ -74,15 +85,6 @@ public class ListaDeVacinasTela extends JFrame{
 		getContentPane().add(titulo);
 		titulo.setFont(new Font("Monospaced", Font.BOLD, 18));
 		
-		JLabel lblBuscarAnimal = new JLabel("Buscar");
-		lblBuscarAnimal.setBounds(53, 64, 63, 14);
-		getContentPane().add(lblBuscarAnimal);
-		lblBuscarAnimal.setFont(new Font("Monospaced", Font.ITALIC, 15));
-		
-		inputBuscarAnimal = new JTextField();
-		inputBuscarAnimal.setBounds(126, 63, 308, 20);
-		getContentPane().add(inputBuscarAnimal);
-		inputBuscarAnimal.setColumns(10);
 		
 		JButton btnBack = new JButton("<");
 		btnBack.setFont(new Font("Monospaced", Font.BOLD, 15));

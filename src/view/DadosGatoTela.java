@@ -16,6 +16,12 @@ import javax.swing.border.BevelBorder;
 
 import controllers.CadastroResponsavelController;
 
+/**
+ * Classe que define a tela em que sera possivel ver os dados de um gato, alem de editar, excluir, ver suas vacinas e cadastrar uma nova vacina.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class DadosGatoTela extends JFrame{
 	
 	private JTextField inputNomeGato;
@@ -25,6 +31,11 @@ public class DadosGatoTela extends JFrame{
 	private JTextField inputPelagem;
 	CadastroResponsavelController controller = new CadastroResponsavelController();
 	
+	/**
+	 * Metodo construtor que define espacos para edicao dos dados do animal, alem de botoes para realizar cada acao disponivel.
+	 * 
+	 * @param i Index do animal no ArrayList de animais do responsavel.
+	 */
 	public DadosGatoTela(int i) {
 		super("Cadastro de vacina");
 		

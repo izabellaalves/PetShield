@@ -15,16 +15,18 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 
-import controllers.CadastroCachorroController;
 import controllers.CadastroResponsavelController;
 import model.Cachorro;
 import model.Responsavel;
 
+/**
+ * Classe que define a tela em que e possivel cadastrar um objeto do tipo cachorro.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class CadastroCachorroTela extends JFrame implements ActionListener{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
 	private JTextField inputNomeCachorro;
@@ -34,6 +36,10 @@ public class CadastroCachorroTela extends JFrame implements ActionListener{
 	private JTextField inputPorte;
 	protected Responsavel responsavel2;
 	
+	/**
+	 * Metodo construtor que define as entradas de dados necessarias para o cadastro e o botao para envio do formulario.
+	 * 
+	 */
 	public CadastroCachorroTela() {
 		super("Controle de vacinas");
 		
@@ -136,6 +142,9 @@ public class CadastroCachorroTela extends JFrame implements ActionListener{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
+	/**
+	 * Metodo herdado de ActionListner, o qual recebe os dados e gera um objeto do tipo cachorro.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
@@ -149,6 +158,7 @@ public class CadastroCachorroTela extends JFrame implements ActionListener{
 		cadastroResponsavelController.cadastrarCachorro(nC, dN, sexo, raca, porte);
 		
 		this.setVisible(false);
+		new MenuTela();
 		JOptionPane.showMessageDialog(null, "Animal cadastrado com sucesso!");
 			
 	}

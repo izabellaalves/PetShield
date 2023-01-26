@@ -19,6 +19,12 @@ import javax.swing.border.BevelBorder;
 
 import controllers.CadastroResponsavelController;
 
+/**
+ * Classe que define a tela em que sera possivel ver os dados de um coelho, alem de editar, excluir, ver suas vacinas e cadastrar uma nova vacina.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class DadosCoelhoTela extends JFrame{
 	
 	CadastroResponsavelController controller = new CadastroResponsavelController();
@@ -29,6 +35,11 @@ public class DadosCoelhoTela extends JFrame{
 	private JLabel lblNomeCoelho;
 	JComboBox<String> comboBoxMixomatose = new JComboBox<>();
 	
+	/**
+	 * Metodo construtor que define espacos para edicao dos dados do animal, alem de botoes para realizar cada acao disponivel.
+	 * 
+	 * @param i Index o animal no ArrayList de animais do responsavel.
+	 */
 	public DadosCoelhoTela(int i ) {
 		super("Controle de vacinas");
 		

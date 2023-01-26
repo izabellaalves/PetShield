@@ -15,6 +15,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 
+/**
+ * Classe que define a tela em que sera possivel ver os dados de um cachorro, alem de editar, excluir, ver suas vacinas e cadastrar uma nova vacina.
+ * 
+ * @author Izabella Alves Pereira
+ * @author Lucas de Oliveira Dias Marques Ferreira
+ */
 public class DadosCachorroTela extends JFrame implements ActionListener{
 	
 	CadastroResponsavelController controller = new CadastroResponsavelController();
@@ -26,6 +32,11 @@ public class DadosCachorroTela extends JFrame implements ActionListener{
 	private JTextField inputPorte;
 	JButton btnSalvar = new JButton("Salvar");
 	
+	/**
+	 * Metodo construtor que define espacos para edicao dos dados do animal, alem de botoes para realizar cada acao disponivel.
+	 * 
+	 * @param i Index do animal no ArrayList de animais do responsavel.
+	 */
 	public DadosCachorroTela(int i) {
 		super("Cadastro de vacinas");
 		
