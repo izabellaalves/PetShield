@@ -38,7 +38,7 @@ class TestCreatAnimal {
 		
 		controller.cadastrarCachorro(nC, dN, sexo, raca, porte);
 		
-		//Retorna falso se a lista de animais do responsável estiver va
+		//Retorna falso se a lista de animais do responsável estiver vazia
 		
 		assertFalse(controller.responsavel21.getAnimais().isEmpty());
 
