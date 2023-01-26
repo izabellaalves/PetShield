@@ -97,7 +97,7 @@ public abstract class Animal {
 	public abstract String toString();
 	
 	/**
-	 * Metodo abstrado que sera implementado nas classes filhas e servira para alterar um dos atributos do animal.
+	 * Metodo abstrato que sera implementado nas classes filhas e servira para alterar um dos atributos do animal.
 	 * 
 	 * @param string Valor que sera usado para atualizar o atributo.
 	 */
