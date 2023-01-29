@@ -164,6 +164,7 @@ public class CadastroResponsavelTela extends JFrame implements ActionListener{
 		if (src == btnCadastrar) {
 			CadastroResponsavelController cadastroResponsavelController = new CadastroResponsavelController();
 			cadastroResponsavelController.cadastrarResponsavel(c, em, end, tele);
+			cadastroResponsavelController.preCadastro();
 		}
 		
 		this.setVisible(false);

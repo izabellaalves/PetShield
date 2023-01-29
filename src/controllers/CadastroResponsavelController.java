@@ -40,9 +40,15 @@ public class CadastroResponsavelController{
 	 * 
 	 */
 		public void cadastrarResponsavel(String n, String em, String end, Double tel) {
-		
 			responsavel21 = new Responsavel(n, em, end, tel);
-			
+			new MenuTela();
+		};
+		
+		
+		/**
+		 * Metodo responsavel por pre cadastrar dados pro usuario.
+		 */
+		public void preCadastro() {
 			cadastrarCachorro("Totó", "20/03/2022", "macho", "pinscher", "pequeno");
 			cadastrarGato("Fenix", "01/02/2021", "macho", "siamês", "sólida");
 			cadastrarCoelho("Flora", "12/01/2022", "fêmea", "angorá", true);
@@ -50,9 +56,7 @@ public class CadastroResponsavelController{
 			cadastrarVacina("Gripe canina", "08/12/2022", 0);
 			cadastrarVacina("V3", "08/12/2022",1);
 			cadastrarVacina("Pasteurelose", "08/12/2022", 2);
-			
-			new MenuTela();
-		};
+		}
 	
 		/**
 		 * Metodo responsavel por receber a entrada de dados do usuario na view e instanciar um objeto do tipo Cachorro.
@@ -270,23 +274,20 @@ public class CadastroResponsavelController{
 		 * @param string Nome do animal pesquisado.
 		 */
 		public void buscarAnimal(String string) {
-		String nome = string;
-			for (i = 0; i < responsavel21.getAnimais().size(); i++) {
-				if(responsavel21.getAnimais().get(i).getNome().equals(nome) == true) {
-					if (responsavel21.getAnimais().get(i).getEspecie() == "Cachorro") {
-						new DadosCachorroTela(i);
-					} else if (responsavel21.getAnimais().get(i).getEspecie() == "Gato") {
-						new DadosGatoTela(i);
-					} else {
-						new DadosCoelhoTela(i);
+			String nome = string;
+				for (i = 0; i < responsavel21.getAnimais().size(); i++) {
+					if(responsavel21.getAnimais().get(i).getNome().equals(nome)) {
+						if (responsavel21.getAnimais().get(i).getEspecie() == "Cachorro") {
+							new DadosCachorroTela(i);
+							break;
+						} else if (responsavel21.getAnimais().get(i).getEspecie() == "Gato") {
+							new DadosGatoTela(i);
+							break;
+						} else if (responsavel21.getAnimais().get(i).getEspecie() == "Gato"){
+							new DadosCoelhoTela(i);
+							break;
+						}
 					}
-				} else {
-					JOptionPane.showMessageDialog(null, "Animal não encontrado."); 
-					new ListaAnimaisTela();
-					break;
 				}
-			}
-			
 		}
-		
-		}	
+}	

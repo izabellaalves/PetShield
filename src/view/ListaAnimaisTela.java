@@ -108,9 +108,7 @@ public class ListaAnimaisTela extends JFrame implements ListSelectionListener{
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						controller.buscarAnimal(inputBuscarAnimal.getText());
-						dispose();
-						
+						controller.buscarAnimal(inputBuscarAnimal.getText());	
 					}
 					
 				}
