@@ -15,7 +15,7 @@ public class Vacina {
 	
 
 	/**
-	 * Construtor padrão para criar uma nova instancia do objeto vacina.
+	 * Construtor padrao para criar uma nova instancia do objeto vacina.
 	 * 
 	 * @param tipo Tipo da vacina.
 	 * @param data Data de aplicacao da vacina.

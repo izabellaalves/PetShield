@@ -13,7 +13,7 @@ public class Gato extends Animal{
 	private String pelagem;
 	
 	/**
-	 * Construtor padrão para criar uma nova instancia do objeto gato.
+	 * Construtor padrao para criar uma nova instancia do objeto gato.
 	 * 
 	 * @param nome Nome do coelho.
 	 * @param data Data de nascimento do coelho.

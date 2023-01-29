@@ -17,6 +17,10 @@ class TesteUpdateAnimal {
 	
 	CadastroResponsavelController controller = new CadastroResponsavelController();
 
+	/**
+	 * Metodo responsavel por instanciar um responsavel e cadastrar um cachorro em sua lista de animais.
+	 * 
+	 */
 	void infos() {
 	
 		controller.cadastrarResponsavel("Junior", "jr@gmail.com", "Rua tal, casa tal", (double) 2130042699);
@@ -33,8 +37,13 @@ class TesteUpdateAnimal {
 		
 	}
 
+	/**
+	 * Metodo responsavel por testar o metodo editarDadosCachorro, o teste compara o atributo editado com o valor
+	 * usado na edicao.
+	 * 
+	 */
 	@Test
-	void testeCadastrarAnimal() {
+	void testeEditarDadosAnimal() {
 		
 		infos();
 		

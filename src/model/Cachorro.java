@@ -14,7 +14,7 @@ public class Cachorro extends Animal {
 	private String porte;
 	
 	/**
-	 * Construtor padrão para criar uma nova instancia do objeto cachorro.
+	 * Construtor padrao para criar uma nova instancia do objeto cachorro.
 	 * 
 	 * @param nome Nome do cachorro.
 	 * @param data Data de nascimento do cachorro.

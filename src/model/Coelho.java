@@ -14,7 +14,7 @@ public class Coelho extends Animal{
 	private boolean vacinaMixomatose;
 	
 	/**
-	 * Construtor padrão para criar uma nova instancia do objeto coelho.
+	 * Construtor padrao para criar uma nova instancia do objeto coelho.
 	 * 
 	 * @param nome Nome do coelho.
 	 * @param data Data de nascimento do coelho.

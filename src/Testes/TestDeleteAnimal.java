@@ -17,6 +17,10 @@ class TestDeleteAnimal {
 
 	CadastroResponsavelController controller = new CadastroResponsavelController();
 
+	/**
+	 * Metodo responsavel por instanciar um responsavel e cadastrar um cachorro em sua lista de animais.
+	 * 
+	 */
 	void infos() {
 	
 		controller.cadastrarResponsavel("Junior", "jr@gmail.com", "Rua tal, casa tal", (double) 2130042699);
@@ -33,8 +37,13 @@ class TestDeleteAnimal {
 	
 	}
 
+	/**
+	 * Metodo responsavel por testar a classe excluirAnimal, o teste funcionara se a lista estiver vazia, 
+	 * o que significa que o animal foi excluido.
+	 * 
+	 */
 	@Test
-	void testeCadastrarAnimal() {
+	void testeExcluirAnimal() {
 		
 		infos();
 		

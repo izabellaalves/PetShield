@@ -178,11 +178,9 @@ public class CadastroResponsavelController{
 			
 			for (int k = 0; k < responsavel21.getAnimais().get(posAnimal).getVacinas().size(); k++) {
 				if(responsavel21.getAnimais().get(posAnimal).getVacinas().get(k).getTipo().equals(nome)) {
-					System.out.println(responsavel21.getAnimais().get(posAnimal).getVacinas().get(k).getTipo());
 					new DadosVacinaTela(posAnimal, k);
 				}
-			}
-			
+			}			
 		}
 		
 		/**
@@ -283,7 +281,7 @@ public class CadastroResponsavelController{
 						} else if (responsavel21.getAnimais().get(i).getEspecie() == "Gato") {
 							new DadosGatoTela(i);
 							break;
-						} else if (responsavel21.getAnimais().get(i).getEspecie() == "Gato"){
+						} else if (responsavel21.getAnimais().get(i).getEspecie() == "Coelho"){
 							new DadosCoelhoTela(i);
 							break;
 						}
